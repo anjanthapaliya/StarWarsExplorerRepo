@@ -1,0 +1,20 @@
+ 
+  <div [@dialog] *ngIf="visible" class="dialog">
+    <!--<ng-content></ng-content>-->
+    <h3>Character - {{char.name}}</h3>
+    <hr>
+      Name: {{char.name}} <br>
+      Height: {{char.height}} <br> 
+      Eye Color: {{char.eye_color}} <br>
+      <!--Films: <div style="overflow-x: hidden; overflow-y:auto" [innerHtml] =  "char.films | commaSeparatedToUnorderedList"></div>-->
+      Other Films: <div style="overflow-x: hidden; overflow-y:auto">
+          <ul> 
+              <li *ngFor="let aFilm of charFilms">
+                  {{aFilm}}
+              </li>    
+            </ul>
+      </div>
+      <button *ngIf="closable" (click)="close()" aria-label="Close" class="dialog__close-btn">X</button>
+   </div>
+
+<div *ngIf="visible" class="overlay" (click)="close()"></div>

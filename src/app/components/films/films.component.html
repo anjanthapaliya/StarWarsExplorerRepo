@@ -1,0 +1,21 @@
+<ul class="episodes">
+  <li *ngFor="let aFilm of films">
+    <!--<a href="#" class="list-group-item clearfix" (click) = "setFilm(aFilm)">  -->
+    <a href="#" class="list-group-item clearfix" routerLink="/{{aFilm.episode_id}}" 
+                                      routerLinkActive="active" routerLinkActiveOptions="{exact:true}">  
+        {{ aFilm.title }} 
+        <span class="pull-right">       
+          <button class="btn btn-xs btn-warning">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </button>
+        </span>
+    </a>
+  </li>
+</ul>
+
+
+ <!--this component has an input property  called 'film' -->
+<!--<app-filmdetailsinput [film] = "swfilm"></app-filmdetailsinput>-->
+
+ 
+

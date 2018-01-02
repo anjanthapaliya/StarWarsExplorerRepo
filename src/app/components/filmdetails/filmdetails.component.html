@@ -1,0 +1,32 @@
+
+<div class="card" style="max-height:1190px; margin-top:10px;">
+  <img src="" alt="">
+  <div class="card-block" style="color:#000">
+    <div class="card-title">
+     <h3>Opening Crawl</h3>
+    </div>
+      <div class="card-text">
+        {{openingCrawl}}
+      </div>
+      <hr>
+      <div><h4>Director: </h4>{{director}}</div>
+      <hr>
+      <div><h4>Producer: </h4>{{producer}}</div>
+      <hr>
+    </div>
+  <div class="list-group">
+      <h4 style="color:#000">&nbsp;&nbsp;&nbsp;Characters</h4>
+
+      <ul class="columnList"> 
+        <li class="list-group-item" *ngFor="let aChar of characters" style="width:180px">
+         <button (click)= toggleUpdateDialog(aChar) class="btn"> {{aChar.name}} </button>   <!--(click) = setCharacter(aChar) -->
+        </li>    
+      </ul>
+  </div>
+</div>
+
+
+<app-chardetails [char] = "character" [charFilms] = "charFilms" [closable] = "true" [(visible)]="showDialog">
+</app-chardetails>
+
+
